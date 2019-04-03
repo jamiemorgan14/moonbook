@@ -28,7 +28,7 @@ namespace moonbook.Models
       NearbyDestinations.Add(direction, destination);
     }
 
-    public IDestination TraveltoPlanet(Direction dir)
+    public IDestination TravelToDestination(Direction dir)
     {
       if (NearbyDestinations.ContainsKey(dir))
       {
@@ -39,6 +39,7 @@ namespace moonbook.Models
     }
     public Planet(string name, string desc, Moon moon = null)
     {
+      NearbyDestinations = new Dictionary<Direction, IDestination>();
       GuestBook = new List<string>();
       Name = name;
       Description = desc;
